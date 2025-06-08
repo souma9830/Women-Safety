@@ -1,0 +1,40 @@
+
+.section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.section.how-to-use {
+    background: linear-gradient(to right, #F5E6F5, #E6F5F0);
+}
+
+
+.section#faq {
+    background-color: #F9F9F9;
+}
+
+.section#faq h3 {
+    background-color: #FFF0F5;
+    padding: 10px;
+    margin: 10px 0 5px;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 875px) {
+    .section.how-to-use, .section#faq {
+        padding: 30px 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section.how-to-use, .section#faq {
+        padding: 20px 10px;
+    }
+    .section#faq h3 {
+        padding: 8px;
+        font-size: 18px;
+    }
+}

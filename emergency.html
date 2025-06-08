@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency</title>
+    <link rel="stylesheet" href="emergency.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="img.png" alt="">
+            <input type="checkbox" id="check">
+            <label for="check" class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+            </label>
+            <ul class="menu">
+                <label for="check" class="close-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                </label>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mentalhealth.html">Mental Health</a></li>
+                <li><a href="reproductive.html">Reproductive Health</a></li>
+                <li><a href="self.html">Self Care</a></li>
+                <li><a href="holistic.html">Holistic Wellness</a></li>
+                <li><a href="contact.html"><button>Contact</button></a></li>
+                <li><a href="emergency.html"><button id="emr">Emergency</button></a></li>
+            </ul>
+        </nav>
+    </header>
+ <div class="hero">
+    <h1>You’re Not Alone – Help is Here</h1>
+    <p>Quick resources for urgent health concerns.</p>
+    <button class="sos-buttonn" onclick="alert('Calling emergency services...')">Call Now</button>
+    <button onclick="document.getElementById('resources').scrollIntoView()"> <a href="#location">Find Help</a></button>
+    <script>
+          document.addEventListener("DOMContentLoaded", function () {
+    const sosButton = document.querySelector(".sos-buttonn");
+    
+    sosButton.addEventListener("click", function () {
+        window.location.href = "tel:100";
+    });
+});
+
+    </script>
+</div>
+
+
+<div class="section" id="resources">
+
+    <div class="immediate-help">
+        <h2>Need Help Now?</h2>
+        <p><strong>Mental Health Crisis:</strong> <a href="tel:988">988</a></p>
+        <p><strong>Reproductive Health Emergency:</strong> <a href="tel:1-800-230-7526">1-800-230-PLAN</a></p>
+        <p><strong>General Emergency:</strong> <a href="tel:911">911</a></p>
+        <p><strong>Ambulance: </strong><a href="tel:101">101</a></p>
+        <p><strong>Police: </strong><a href="tel:100">100</a></p>
+        <p><a href="#">Live Chat with a Professional</a></p>
+    </div>
+
+  
+    <h2>Emergency Health Guides</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Mental Health Crisis</h3>
+            <p><strong>Symptoms:</strong> Panic attack, suicidal thoughts</p>
+            <p><strong>Quick Tip:</strong> Breathe slowly: 4 sec in, 4 sec out</p>
+            <button onclick="alert('Contacting crisis line...')">Act Now</button>
+        </div>
+        <div class="card">
+            <h3>Reproductive Health Emergency</h3>
+            <p><strong>Symptoms:</strong> Severe bleeding, pelvic pain</p>
+            <p><strong>Quick Tip:</strong> Lie down, stay calm</p>
+            <button onclick="alert('Finding nearest clinic...')">Act Now</button>
+        </div>
+        <div class="card">
+            <h3>Physical Self-Care Crisis</h3>
+            <p><strong>Symptoms:</strong> Fainting, dehydration</p>
+            <p><strong>Quick Tip:</strong> Sip water, elevate legs</p>
+            <button onclick="alert('Locating emergency care...')">Act Now</button>
+        </div>
+    </div>
+
+
+    <div id="location" class="location-tool">
+        <h2>Find Hospital Nearby You</h2>
+        <input type="text" id="pinCodeInput" placeholder="Enter your city or zip code">
+        <button id="searchHospitalBtn">Search</button>
+        <p><em>Or allow location access for instant results.</em></p>
+    </div>
+
+    <script>
+        async function findNearestHospital() {
+            const inputField = document.getElementById('pinCodeInput');
+            const pinCode = inputField.value.trim();
+            
+            if (!pinCode) {
+                alert('Please enter a valid city or pin code.');
+                return;
+            }
+            
+            try {
+              
+                const locationResponse = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${pinCode}`);
+                const locationData = await locationResponse.json();
+                
+                if (locationData.length === 0) {
+                    alert('Location not found. Please enter a valid pin code.');
+                    return;
+                }
+                
+                const { lat, lon } = locationData[0];
+             
+                const overpassQuery = `[out:json];node["amenity"="hospital"](around:5000, ${lat}, ${lon});out;`;
+                const hospitalResponse = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(overpassQuery)}`);
+                const hospitalData = await hospitalResponse.json();
+                
+                if (hospitalData.elements.length === 0) {
+                    alert('No hospitals found nearby. Try a different pin code.');
+                    return;
+                }
+                
+          
+                const nearestHospital = hospitalData.elements[0];
+                alert(`Nearest Hospital: ${nearestHospital.tags.name || 'Unknown'}\nLocation: ${nearestHospital.lat}, ${nearestHospital.lon}`);
+            } catch (error) {
+                console.error('Error fetching hospital data:', error);
+                alert('Error retrieving hospital data. Please try again later.');
+            }
+        }
+
+        document.getElementById('searchHospitalBtn').addEventListener('click', findNearestHospital);
+    </script>
+</div>
+
+<div class="chatbox">
+    <p>Talk to Someone Now</p>
+    <button onclick="alert('Opening chat...')"> Start Chat</button>
+    <script>
+        
+    </script>
+</div>
+
+
+<div class="sos-button" onclick="alert('SOS activated...')">
+    <strong id="SOS">SOS</strong>
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const sosButton = document.querySelector(".sos-button");
+    
+    sosButton.addEventListener("click", function () {
+        window.location.href = "tel:100";
+    });
+});
+
+
+    </script>
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="social-media">
+            <a href="https://www.facebook.com/share/1AHYs2AjTp/" target="_blank">
+                <img src="fb.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/womensafetywing_tg?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                <img src="ins.jpg" alt="Instagram">
+            </a>
+            <a href="https://x.com/wholeWwellnes?t=3XCaMRyi5XzeArSzE85smg&s=09" target="_blank">
+                <img src="twi.jpg" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/posts/smritiiraniofficial_from-panchayat-halls-to-parliament-floors-activity-7307641274621120512-XwQt?utm_source=share&utm_medium=member_android&rcm=ACoAAFFIRE0BLj-RSDCfrDtDsHeDgczO6nJMMoI" target="_blank">
+                <img src="link.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <div class="footer-links">
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="help.html">Help Center</a>
+        </div>
+
+        <p>&copy; 2025 Women’s Wellness. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    
+</body>
+</html>

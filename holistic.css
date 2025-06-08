@@ -1,0 +1,358 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFF1F8, #D4FCF4);
+    color: #333;
+    text-align: center;
+
+}
+
+nav>img{
+    height: 80px;
+    border-radius: 50%;
+    margin-right: auto;
+}
+nav{
+    padding: 25px;
+    background: linear-gradient(45deg, #E91E63, #FF4081);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 14vh;
+    max-width: 100%;
+    overflow-x: hidden;  
+
+}
+nav a{
+    padding: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+}
+ header nav a::before{
+    content: "" ;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(250, 250, 250);
+   
+    width:95%;
+    height: 1.5px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+ header nav a:hover::before{
+    transform: scaleX(1);
+}
+nav>ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+nav button{
+    padding: 10px 15px;
+    background-color: #cc0d4d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+nav button:hover{
+    background-color: #b97474;
+}
+#hol{
+    text-decoration: underline;
+    color: white;
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.sleep-cycle{
+    background-image: url(sleep.jpg);
+   color: white;
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+}
+.exercise-selection{
+    background-image:url(exe.webp) ;
+      background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    color: #ff758c;
+    font-weight: bolder;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 300px;
+}
+.exercise-preferences{
+    background-image: url(goal.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    color: #000000;
+    font-weight: bolder;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-height: 300px;
+}
+#ex{
+    color: #000000;
+}
+
+h2 {
+    color: #ff758c;
+}
+#hol{
+    text-decoration: underline;
+    color: white;
+}
+
+button {
+    background-color: #cc0d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #d63384;
+}
+
+input, select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
+}
+#exercise-list{
+    background: linear-gradient(135deg,red,yellow); 
+   
+    color: white;
+}
+#exercise-benefits{
+    background:linear-gradient(135deg,green,yellow);
+    color: white;
+}
+#goal-exercise-list{
+    background: linear-gradient(135deg,rgb(251, 19, 19),rgb(34, 32, 32));
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding:0;
+}
+
+#gg li{
+    background: #ffe4e1;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#gg li:hover{
+    background: #d63384;
+}
+
+
+#bod {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#care {
+    max-width: 900px; 
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+}
+
+pre {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    color: black;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+}
+
+pre h2 {
+    background-color: #cc0d4d;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.additional-options {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin: 10px 0;
+}
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+}
+ul li a:hover {
+    text-decoration: underline;
+} */
+.wellness-section {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.show {
+    display: block;
+}
+h1, h2 {
+    color: #333;
+}
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+@media screen and (max-width: 1024px) { 
+    #care {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    pre {
+        font-size: medium;
+    }
+}
+
+footer {
+    background: #E91E63;
+    opacity: 0.9;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid wheat;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+nav input, nav .open , nav .close{
+    display: none;
+}
+
+@media screen and (max-width: 875px){
+    nav img{
+        display: flex;
+    }
+    nav ul{
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        background: linear-gradient(45deg, #E91E63, #FF4081);
+        width: 300px;
+        height: 100vh;
+        z-index: 20;
+        transition: all 1s ease;
+        
+    }
+    nav a{
+        display: block;
+        width: 300px;
+    
+        
+    }
+    nav .open , nav .close{
+        display: block;
+    }
+    #check:checked ~  ul{
+        display: flex;
+
+    }
+    .cards{
+        display: grid;
+        grid-template-columns: 0.8fr;
+    }
+    .card{
+        margin-bottom: 20px;
+    }
+    .hero{
+        width: 100vb;
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+}
+

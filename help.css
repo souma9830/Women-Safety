@@ -1,0 +1,249 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #FFF1F8, #D4FCF4);
+    color: #333;
+    text-align: center;
+    
+    justify-content: center;
+
+}
+
+
+nav>img{
+    height: 80px;
+    border-radius: 50%;
+    margin-right: auto;
+}
+nav{
+    padding: 25px;
+    background: linear-gradient(45deg, #E91E63, #FF4081);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 13vh;
+    max-width: 100%;
+    overflow-x: hidden;
+
+
+}
+nav a{
+    padding: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+}
+ header nav a::before{
+    content: "" ;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: rgb(250, 250, 250);
+   
+    width:95%;
+    height: 1.5px;
+    transform: scaleX(0);
+    transition: 0.5s;
+}
+ header nav a:hover::before{
+    transform: scaleX(1);
+}
+nav>ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+nav button{
+    padding: 10px 15px;
+    background: #cc0d4d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+nav button:hover{
+    background: #d63384;
+}
+button{
+    padding: 10px;
+    background-color: #2Ecc71;
+    border-radius: 10px;
+    margin-inline-start: 50px;
+    
+}
+button:hover{
+    background-color: rgb(23, 101, 58);
+}
+
+nav input, nav .open , nav .close{
+    display: none;
+}
+.section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 15px blue;
+}
+
+.hero{
+    margin: 25px;
+
+}
+
+
+.section.how-to-use {
+    background: linear-gradient(to right, #F5E6F5, #E6F5F0);
+}
+
+.section#faq {
+    background-color: #F9F9F9;
+}
+
+.section#faq h3 {
+    background-color: #FFF0F5;
+    padding: 10px;
+    margin: 10px 0 5px;
+    border-radius: 5px;
+}
+
+
+footer {
+    background: #E91E63;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+nav input, nav .open, nav .close {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    .col {
+        bottom: 10px;
+        left: 10px;
+        max-width: 70%;
+    }
+    .col h1 {
+        font-size: 1.8rem;
+    }
+    .col button {
+        font-size: 0.9rem;
+        padding: 9px 18px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        padding: 20px;
+        background: linear-gradient(45deg, #E91E63, #FF4081);
+        width: 300px;
+        height: 100vh;
+        z-index: 20;
+        transition: right 0.5s ease;
+    }
+    nav .open {
+        display: block;
+        cursor: pointer;
+    }
+    nav .close {
+        display: block;
+        cursor: pointer;
+    }
+    #check:checked ~ ul {
+        right: 0;
+    }
+    #check:checked ~ .close {
+        display: block;
+    }
+    .hero {
+        height: 60vh;
+        background-position: center;
+    }
+    .col {
+        width: 90%;
+        text-align: center;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+footer {
+    background: #E91E63;
+    opacity: 0.9;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid wheat;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
